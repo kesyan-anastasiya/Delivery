@@ -1,4 +1,5 @@
 require('@babel/register');
+require('dotenv').config()
 const express = require('express')
 
 const app = express();
@@ -15,7 +16,7 @@ app.use(ssr)
 //app.use(getUser)
  app.use('/', indexRouter)
 
-const PORT = 3000
+const PORT = process.env.PORT || 4000
 
 app.listen(PORT, () => {
     console.log(`Сервер работает на ${PORT} порту и желает вам хорошего дня.`);
