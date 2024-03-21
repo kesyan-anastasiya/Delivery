@@ -21,7 +21,7 @@ function Layout({ title, children, user }) {
                 <script defer src='/scripts/auth.js' />
             </head>
             <body>
-                <NavBar />
+                <NavBar user ={user} />
                 {children}
             </body>
         </html>

@@ -1,9 +1,9 @@
 const React = require("react");
 const Layout = require("../Layout");
 
-function MainPage({ carts, title }) {
+function MainPage({ carts, title, user}) {
     return (
-        <Layout title={title}>
+        <Layout title={title} user = {user}>
             <div className='order_container'>
                 {carts.map((cart) => (
                     <div className="card" style={{ width: '18rem' }}>
