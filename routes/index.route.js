@@ -10,7 +10,7 @@ router.use('/', mainRouter)
 router.use('/orders', ordersRouter)
 router.use('/users', usersRouter)
 router.use('/api/main', mainApiRouter)
-router.use('/api/order', orderApiRouter)
+router.use('/api/orders', orderApiRouter)
 router.use('/description', discountRouter)
 
 

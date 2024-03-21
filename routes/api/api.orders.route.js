@@ -20,4 +20,20 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.post('/:id', async (req, res) => {
+    try {
+        const {id} = req.params
+    const {name, price, discount, description } = req.body
+   
+   const result = await  Order.update({name, price, discount, description},{
+    where:{id}
+   
+   }) 
+   res.redirect('/')
+    } catch (error) {
+        
+    }
+
+    })
+
 module.exports = router
