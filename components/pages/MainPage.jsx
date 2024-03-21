@@ -18,10 +18,10 @@ function MainPage({ carts, title }) {
                                     (cart.price / 100) * cart.discount}{' '}
                             </p>
                             <button className="btn btn-success">
-                                <a>Описание заказа</a>
+                                <a href ={`/description/${cart.id}`}>Описание заказа</a>
                             </button>
                             <button className="btn btn-success">
-                                Выкупить<a href="/"></a>
+                                Выкупить<a href=''></a>
                             </button>
                         </div>
                     </div>
