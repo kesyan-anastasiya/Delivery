@@ -1,5 +1,5 @@
-const React = require('react')
-const Layout = require('../Layout')
+const React = require("react");
+const Layout = require("../Layout");
 
 function MainPage({ carts, title, user}) {
     return (
@@ -17,15 +17,20 @@ function MainPage({ carts, title, user}) {
                                 {cart.price -
                                     (cart.price / 100) * cart.discount}{' '}
                             </p>
-                            <button className="btn btn-success">
-                                <a href ={`/description/${cart.id}`}>Описание заказа</a>
+                            <button>
+                            <a href ={`/description/${cart.id}`}>Описание заказа</a>
                             </button>
+
                             <button className="btn btn-success">
-                                Выкупить<a href=''></a>
+                                Выкупить<a href="/"></a>
                             </button>
-                            <button className="btn btn-danger btn-lg delete" data-id = {cart.id}>
+                            <a className="btn btn-primary" href={`/orders/${cart.id}`}>
+                Изменить 
+              </a>
+              <button className="btn btn-danger btn-lg delete" data-id = {cart.id}>
                                 Удалить
                             </button>
+              
                         </div>
                     </div>
                 ))}
@@ -33,7 +38,7 @@ function MainPage({ carts, title, user}) {
         </Layout>
     )
 }
-module.exports = MainPage
+module.exports = MainPage;
 
 // <div class="card" style="width: 18rem;">
 //   <img src="..." class="card-img-top" alt="...">

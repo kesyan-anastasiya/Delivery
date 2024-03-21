@@ -18,8 +18,10 @@ router.use('/description', discountRouter)
 router.use('/auth', authRouter)
 
 router.use('/api/main', mainApiRouter)
-router.use('/api/order', orderApiRouter)
+router.use('/api/orders', orderApiRouter)
+router.use('/description', discountRouter)
 router.use('/api/auth', apiAuthRouter)
+
 
 
 module.exports = router;
