@@ -5,7 +5,7 @@ function MainPage({carts,title}){
     return(
         <Layout title ={title}>
 <div>
-    <div>
+    <div className='order_container'>
     {carts.map(cart=>(<div><img src = {cart.img}/>
     <div>{cart.name}</div>
     <div>{cart.price}</div>
