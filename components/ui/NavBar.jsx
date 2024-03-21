@@ -2,12 +2,23 @@ const React = require("react");
 
 function NavBar(){
 return (
-<div> 
-    <a href = '/auth/sign-in'>Вход</a>
-    <a href = '/'>Заказы</a>
-    <a href = '/'>Корзина</a>
-    <a href = '/auth/sign-up'>Зарегистрируйся</a>
-</div>
+    <div className="navbar navbar-expand-lg border-bottom border-body ">
+        <a className="navbar-brand" href="/auth/sign-in">
+            Вход
+        </a>
+        <a className="navbar-brand" href="/">
+            Заказы
+        </a>
+        <a className="navbar-brand" href="/">
+            Корзина
+        </a>
+        <a className="navbar-brand" href="/orders">
+            Cоздать заказ
+        </a>
+        <a className="navbar-brand"  href="/auth/sign-up">
+            Зарегистрируйся
+        </a>
+    </div>
 )
 }
 

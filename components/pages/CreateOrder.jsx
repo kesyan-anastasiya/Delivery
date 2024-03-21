@@ -1,8 +1,13 @@
-const React = require("react");
+const React = require('react')
 const Layout = require('./../Layout')
+const Form = require('../ui/Form')
 
-// function CreateOrder {
-// return();
-// }
+function CreateOrder(district, title) {
+    return (
+        <Layout >
+            <Form/>
+        </Layout>
+    )
+}
 
-// module.exports = CreateOrder;
+module.exports = CreateOrder
