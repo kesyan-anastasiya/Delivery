@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const order = await Order.findOne({ where: {id} }); 
-console.log(order);
+
     const html = res.renderComponent(UpdatePage, {
       title: "Update order",
       order, 
