@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const {Order} = require ('../../db/models/')
+//const multer = require('multer')
 
 router.post('/', async (req, res) => {
     try {
@@ -14,7 +15,7 @@ router.post('/', async (req, res) => {
             userId: '1',
         })
         // еще надо нахуярить юзер айди и разобраться с дистриктом
-        res.end()
+        res.redirect('/')
     } catch ({ message }) {
         res.json({ message })
     }
