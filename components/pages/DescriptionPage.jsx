@@ -1,22 +1,15 @@
 const React = require('react')
 const Layout = require('../Layout')
-function MainPage({carts,title}){
+function DiscountPage({description_id,title}){
    
     return(
-        <Layout title ={title}>
-<div>
+    <Layout title = {title}>
     <div>
-    {carts.map(cart=>(<div><img src = {cart.img}/>
-    <div>{cart.name}</div>
-    <div>{cart.price}</div>
-    <div>{(cart.price -(cart.price / 100) * cart.discount)} </div> 
-    <button><a>Описание заказа</a></button>
-    <button>Выкупить<a href= '/'></a></button>
-    </div>))}
-    
+    <div><img src = {description_id.img}/></div>
+    <div>{description_id.description}</div>
+    <button>Оплатить<a href= '/'></a></button>
     </div>
-</div>
-</Layout>
+      </Layout>
     )
 }
-module.exports = MainPage
+module.exports = DiscountPage
