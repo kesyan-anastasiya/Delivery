@@ -29,11 +29,15 @@ const html = res.renderComponent(MainPage,{carts,title : 'main'})
 //     }
 // })
 
-// router.delete('/', async (req, res) => {
-//     try {
-
-//     } catch ({ message }) {
-//         res.json({ message })
-//     }
-// })
+router.delete('/:id', async (req, res) => {
+    try {
+const {id} = req.params
+const data = await Order.destroy({where: { id }})
+if(data){
+    res.json({message: 'ok'})
+}
+    } catch ({ message }) {
+        res.json({ message })
+    }
+})
 module.exports = router;

@@ -23,6 +23,9 @@ function MainPage({ carts, title }) {
                             <button className="btn btn-success">
                                 Выкупить<a href=''></a>
                             </button>
+                            <button className="delete" data-id = {cart.id}>
+                                Удалить
+                            </button>
                         </div>
                     </div>
                 ))}
