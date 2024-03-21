@@ -3,7 +3,7 @@ const React = require('react')
 function Form(district) {
     return (
         <div className="input-group mb-3 ">
-            <form action="/api/orders" method="Post" className="form-container">
+            <form action="/api/order" method="Post" className="form-container">
                 <label className="input-group-text">Название</label>
                 <input type="text" name="name" className="form-control" />
                 <label className="input-group-text">Цена</label>
