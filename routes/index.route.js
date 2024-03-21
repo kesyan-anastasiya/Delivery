@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const usersRouter = require('./views/users.routes')
-const usersRouter = require('./views/users.routes')
 const mainRouter = require('./views/main.routes')
 const discountRouter = require('./views/descriptionPage')
 const ordersRouter = require('./views/orders.routes')
