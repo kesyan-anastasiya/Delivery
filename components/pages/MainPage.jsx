@@ -1,5 +1,6 @@
 const React = require('react')
 const Layout = require('../Layout')
+
 function MainPage({ carts, title }) {
     return (
         <Layout title={title}>
