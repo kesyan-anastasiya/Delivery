@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     this.belongsTo(User,{foreignKey: "userId"})
     }
   }
-  Oder.init({
+  Order.init({
     name: {
       allowNull: false,
       type: DataTypes.TEXT
