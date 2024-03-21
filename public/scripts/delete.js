@@ -1,7 +1,6 @@
 const container = document.querySelector('.order_container')
 
 container.addEventListener('click',async (e)=>{
-    e.preventDefault()
 if(e.target.classList.contains('delete')){
     const {id}= e.target.dataset
    const res =  await fetch(`/${id}`,{

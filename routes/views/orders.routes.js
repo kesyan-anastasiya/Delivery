@@ -1,6 +1,7 @@
-const router = require('express').Router()
-const CreateOrder = require('../../components/pages/CreateOrder')
-const { District } = require('./../../db/models')
+const router = require("express").Router();
+const CreateOrder = require("../../components/pages/CreateOrder");
+const { District, Order } = require("../../db/models");
+const UpdatePage = require("../../components/pages/UpdatePage");
 
 router.get('/', async (req, res) => {
     try {
@@ -15,24 +16,41 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
-    try {
-    } catch ({ message }) {
-        res.json({ message })
-    }
-})
+router.get("/:id", async (req, res) => {
+    
+  try {
+    const { id } = req.params;
+    const order = await Order.findOne({ where: {id} }); 
 
-router.put('/', async (req, res) => {
-    try {
-    } catch ({ message }) {
-        res.json({ message })
-    }
-})
+    const html = res.renderComponent(UpdatePage, {
+      title: "Update order",
+      order, 
+    });
 
-router.delete('/', async (req, res) => {
-    try {
-    } catch ({ message }) {
-        res.json({ message })
-    }
-})
-module.exports = router
+    res.send(html);
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
+router.post("/", async (req, res) => {
+  try {
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
+router.put("/", async (req, res) => {
+  try {
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+
+router.delete("/", async (req, res) => {
+  try {
+  } catch ({ message }) {
+    res.json({ message });
+  }
+});
+module.exports = router;
