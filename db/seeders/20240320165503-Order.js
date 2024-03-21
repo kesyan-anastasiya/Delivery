@@ -12,7 +12,8 @@ module.exports = {
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS94Uk6mXgVPdXaITcqHIGHCxK3Ka0yKqSMOqqaA5WWz625dVXN4ZXuJqfj9LkR0UOnuk4&usqp=CAU",
           discount: 50,
           userId: 1,
-          description: 'Две мясных котлеты гриль, специальный соус, сыр, огурцы, салат и лук, всё на булочке с кунжутом, только так и это Мак Дак',
+          
+          : 'Две мясных котлеты гриль, специальный соус, сыр, огурцы, салат и лук, всё на булочке с кунжутом, только так и это Мак Дак',
           districtId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
