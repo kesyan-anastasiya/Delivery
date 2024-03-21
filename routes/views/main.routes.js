@@ -5,8 +5,8 @@ const {Order}= require('../../db/models')
 
 router.get('/', async (req,res)=>{
     try{
-    const cart = await Order.findAll();
-const html = res.renderComponent(MainPage,{cart,title : 'main'})
+    const carts = await Order.findAll();
+const html = res.renderComponent(MainPage,{carts,title : 'main'})
             res.send(html);
     }catch({message}){
         res.send(message)
