@@ -12,6 +12,7 @@ function MainPage({carts,title}){
     <div>{(cart.price -(cart.price / 100) * cart.discount)} </div> 
     <button><a href= {`/description/${cart.id}`}>Описание заказа</a></button>
     <button>Выкупить</button>
+    <button>Удалить</button>
     </div>))}
     
     </div>
