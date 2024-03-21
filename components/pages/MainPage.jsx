@@ -17,15 +17,20 @@ function MainPage({ carts, title, user}) {
                                 {cart.price -
                                     (cart.price / 100) * cart.discount}{' '}
                             </p>
-                            <button className="btn btn-success">
-                                <a>Описание заказа</a>
+                            <button>
+                            <a href ={`/description/${cart.id}`}>Описание заказа</a>
                             </button>
+
                             <button className="btn btn-success">
                                 Выкупить<a href="/"></a>
                             </button>
                             <a className="btn btn-primary" href={`/orders/${cart.id}`}>
                 Изменить 
               </a>
+              <button className="btn btn-danger btn-lg delete" data-id = {cart.id}>
+                                Удалить
+                            </button>
+              
                         </div>
                     </div>
                 ))}

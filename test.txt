@@ -1,3 +1,7 @@
 npx sequelize model:create --name User --attributes name:text,email:text,password:text,status:text
 npx sequelize model:create --name Oder --attributes name:text,price:integer,img:text,discount:integer,userId:integer,description:text,districtId:integer  
 npx sequelize model:create --name District --attributes name:text
+
+<a className="btn btn-primary" href={`/orders/${cart.id}`}>
+                Изменить 
+              </a>
