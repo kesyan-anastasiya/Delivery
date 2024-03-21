@@ -23,6 +23,20 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+
+        {
+          name: "Красногвардейский",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+
+        {
+          name: "Приморский",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+
+
       ],
       {}
     );
