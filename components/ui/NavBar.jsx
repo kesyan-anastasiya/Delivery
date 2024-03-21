@@ -1,8 +1,9 @@
 const React = require("react");
 
-function NavBar(){
+function NavBar({user}){
 return (
     <div className="navbar navbar-expand-lg border-bottom border-body ">
+      {user && <div>{user.name}</div>}
         <a className="navbar-brand" href="/auth/sign-in">
             Вход
         </a>
