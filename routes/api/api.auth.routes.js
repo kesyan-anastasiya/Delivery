@@ -11,12 +11,12 @@ router.post('/sign-in', async (req, res) => {
 
     user = await User.findOne({ where: { name } });
     if (!user) {
-      res.json({ message: 'Такого пользователя нет или пароль неверный' });
+      res.json({ message: 'Такого пользователя нет, зарегистрируйся сначала пожалуйста' });
       return;
     }
     const isSame = await bcrypt.compare(password, user.password);
     if (!isSame) {
-      res.json({ message: 'Такого пользователя нет или пароль неверный' });
+      res.json({ message: 'Пароль неверный, пожалуйста попробуй еще раз' });
       return;
     }
     const { accessToken, refreshToken } = generateTokens({
