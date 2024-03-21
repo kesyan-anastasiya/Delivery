@@ -1,16 +1,17 @@
 const router = require('express').Router()
 const CreateOrder = require('../../components/pages/CreateOrder')
-const { District } = require('../../db/models')
+const { District } = require('./../../db/models')
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-       // const districts = District.findAll()
+        const districts = await District.findAll()
         const html = res.renderComponent(CreateOrder, {
+            districts,
             title: 'Create new order',
         })
-        res.send(html)
+        res.status(200).send(html)
     } catch ({ message }) {
-        res.json({ message })
+        res.status(500).json({ message })
     }
 })
 

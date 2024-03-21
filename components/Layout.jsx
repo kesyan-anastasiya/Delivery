@@ -16,8 +16,9 @@ function Layout({ title, children, user }) {
                 />
                 <link rel="stylesheet" href="/styles/style.css" />
                 <script defer src="/scripts/add.js" />
-                <script defer src="/scripts/delete.js" />
+                {/* <script defer src="/scripts/delete.js" /> */}
                 <script defer src="/scripts/update.js" />
+                <script defer src='/scripts/auth.js' />
             </head>
             <body>
                 <NavBar />

@@ -4,7 +4,7 @@ const Layout = require('../Layout')
 function MainPage({ carts, title }) {
     return (
         <Layout title={title}>
-            <div className='order_container'>
+            <div className="order_container">
                 {carts.map((cart) => (
                     <div className="card" style={{ width: '18rem' }}>
                         <img className="card-img-top" src={cart.img} />
@@ -17,11 +17,19 @@ function MainPage({ carts, title }) {
                                 {cart.price -
                                     (cart.price / 100) * cart.discount}{' '}
                             </p>
+
+                            <a href={`/description/${cart.id}`}>
+                                {' '}
+                                <button className="btn btn-success">
+                                    Описание заказа{' '}
+                                </button>
+                            </a>
+
                             <button className="btn btn-success">
-                                <a href ={`/description/${cart.id}`}>Описание заказа</a>
+                                Выкупить<a href=""></a>
                             </button>
-                            <button className="btn btn-success">
-                                Выкупить<a href=''></a>
+                            <button className="delete" data-id={cart.id}>
+                                Удалить
                             </button>
                         </div>
                     </div>
