@@ -3,19 +3,53 @@ const React = require('react')
 function Form(district) {
     return (
         <div className="input-group mb-3 ">
-            <form action="/api/order" method="Post" className="form-container">
+            <form
+                action="/api/orders"
+                method="Post"
+                enctype="multipart/form-data"
+                className="form-container"
+            >
                 <label className="input-group-text">Название</label>
-                <input type="text" name="name" className="form-control" />
+                <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    required
+                />
                 <label className="input-group-text">Цена</label>
-                <input type="text"name='price'  className="form-control" />
+                <input
+                    type="text"
+                    name="price"
+                    className="form-control"
+                    required
+                />
                 <label className="input-group-text">Изображение</label>
-                <input type="text" name='img' className="form-control" />
-                <label className="input-group-text">Район</label> 
-                <input type="text" name='distrit' className="form-control" />
+                <input
+                    type="file"
+                    name="img"
+                    className="form-control"
+                    required
+                />
+                <label className="input-group-text">Район</label>
+                <input
+                    type="text"
+                    name="distrit"
+                    className="form-control"
+                    required
+                />
                 <label className="input-group-text">Скидка</label>
-                <input type="text" name='discount' className="form-control" />
+                <input
+                    type="text"
+                    name="discount"
+                    className="form-control"
+                    required
+                />
                 <label className="input-group-text">Состав заказа</label>
-                <textarea type="text" name='description' className="form-control"></textarea>
+                <textarea
+                    type="text"
+                    name="description"
+                    className="form-control"
+                ></textarea>
                 <button className="btn btn-success" type="submit">
                     Создать
                 </button>

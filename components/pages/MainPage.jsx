@@ -22,7 +22,7 @@ function MainPage({ carts, title, user}) {
                             </button>
 
                             <button className="btn btn-success">
-                                Выкупить<a href="/"></a>
+                                Выкупить<a href=''></a>
                             </button>
                             <a className="btn btn-primary" href={`/orders/${cart.id}`}>
                 Изменить 

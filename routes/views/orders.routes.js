@@ -3,17 +3,18 @@ const CreateOrder = require("../../components/pages/CreateOrder");
 const { District, Order } = require("../../db/models");
 const UpdatePage = require("../../components/pages/UpdatePage");
 
-router.get("/", (req, res) => {
-  try {
-    // const districts = District.findAll()
-    const html = res.renderComponent(CreateOrder, {
-      title: "Create new order",
-    });
-    res.send(html);
-  } catch ({ message }) {
-    res.json({ message });
-  }
-});
+router.get('/', async (req, res) => {
+    try {
+        const districts = await District.findAll()
+        const html = res.renderComponent(CreateOrder, {
+            districts,
+            title: 'Create new order',
+        })
+        res.status(200).send(html)
+    } catch ({ message }) {
+        res.status(500).json({ message })
+    }
+})
 
 router.get("/:id", async (req, res) => {
     

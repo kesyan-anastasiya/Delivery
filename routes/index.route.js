@@ -24,4 +24,4 @@ router.use('/api/auth', apiAuthRouter)
 
 
 
-module.exports = router;
+module.exports = router
