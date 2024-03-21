@@ -3,7 +3,12 @@ const React = require('react')
 function Form(district) {
     return (
         <div className="input-group mb-3 ">
-            <form action="/api/orders" method="Post" className="form-container">
+            <form
+                action="/api/orders"
+                method="Post"
+                enctype="multipart/form-data"
+                className="form-container"
+            >
                 <label className="input-group-text">Название</label>
                 <input
                     type="text"
@@ -13,14 +18,14 @@ function Form(district) {
                 />
                 <label className="input-group-text">Цена</label>
                 <input
-                    type="file"
+                    type="text"
                     name="price"
                     className="form-control"
                     required
                 />
                 <label className="input-group-text">Изображение</label>
                 <input
-                    type="text"
+                    type="file"
                     name="img"
                     className="form-control"
                     required
