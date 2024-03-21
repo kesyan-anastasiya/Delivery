@@ -4,8 +4,8 @@ const Form = require('../ui/Form')
 
 function CreateOrder(district, title) {
     return (
-        <Layout title={title}>
-            <Form district={district} />
+        <Layout >
+            <Form/>
         </Layout>
     )
 }

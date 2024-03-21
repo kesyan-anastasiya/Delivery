@@ -20,7 +20,7 @@ function Layout({ title, children, user }) {
                 <script defer src="/scripts/update.js" />
             </head>
             <body>
-                {/* <NavBar user={user} /> */}
+                <NavBar />
                 {children}
             </body>
         </html>

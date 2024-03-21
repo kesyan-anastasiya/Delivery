@@ -4,9 +4,8 @@ const { District } = require('../../db/models')
 
 router.get('/', (req, res) => {
     try {
-        const districts = District.findAll()
+       // const districts = District.findAll()
         const html = res.renderComponent(CreateOrder, {
-            districts,
             title: 'Create new order',
         })
         res.send(html)
