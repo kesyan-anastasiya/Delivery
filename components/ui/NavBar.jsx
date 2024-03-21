@@ -3,10 +3,10 @@ const React = require("react");
 function NavBar(){
 return (
 <div> 
-    <a href = '/'>Вход</a>
+    <a href = '/auth/sign-in'>Вход</a>
     <a href = '/'>Заказы</a>
     <a href = '/'>Корзина</a>
-    <a href = '/'>Зарегистрируйся</a>
+    <a href = '/auth/sign-up'>Зарегистрируйся</a>
 </div>
 )
 }
