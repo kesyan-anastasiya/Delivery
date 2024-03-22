@@ -1,0 +1,26 @@
+.form-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    
+}
+.nav-conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-el {
+    margin: 0px 30px;
+}
+.four {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

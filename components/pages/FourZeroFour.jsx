@@ -1,12 +1,11 @@
 const React = require('react')
-const NavBar = require('./ui/NavBar')
-
-//все, что будет оборачивать Layout, его будет оборачивать в children
-function Layout({ title, children, user }) {
+const Layout = require('./../Layout')
+const Cards = require('../ui/Cards')
+function OrderHistory({ carts }) {
     return (
         <html lang="en">
             <head>
-                <title>{title}</title>
+                <title></title>
                 <link rel="stylesheet" href="/styles/reset.css" />
                 <link
                     rel="stylesheet"
@@ -18,14 +17,20 @@ function Layout({ title, children, user }) {
                 <script defer src="/scripts/add.js" />
                 <script defer src="/scripts/delete.js" />
                 <script defer src="/scripts/update.js" />
-                <script defer src='/scripts/auth.js' />
+                <script defer src="/scripts/auth.js" />
             </head>
             <body>
-                <NavBar user ={user} />
-                {children}
+                <div className="four">
+                    Вам сюда не надо
+                    <a href="/">
+                        <button className="btn btn-secondary">
+                            Вернуться в безопасность
+                        </button>
+                    </a>
+                </div>
             </body>
         </html>
     )
 }
 
-module.exports = Layout
+module.exports = OrderHistory
