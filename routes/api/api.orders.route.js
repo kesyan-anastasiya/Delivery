@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Order } = require('../../db/models/')
+const { Order, Info } = require('../../db/models/')
 const multer = require('multer')
 
 const storage = multer.diskStorage({
@@ -11,6 +11,23 @@ const storage = multer.diskStorage({
     },
 })
 const upload = multer({ storage })
+
+
+router.post('/buy/:id', async (req,res)=>{
+   const {name, adress, comment, phone} = req.body
+ try {
+        const order = await Info.create({
+            name,
+            adress,
+            comment,
+            phone,
+        })
+        res.redirect('/')
+    } catch ({ message }) {
+        res.json({ message })
+    }
+
+})
 
 router.post('/', upload.single('img'), async (req, res) => {
     const { name, price, discount, districtId, description } = req.body
