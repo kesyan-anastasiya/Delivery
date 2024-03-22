@@ -17,7 +17,7 @@ function NavBar({ user }) {
                     <a className="navbar-brand" href="/my-orders">
                         Мои заказы
                     </a>
-                    <a className="navbar-brand" href="/">
+                    <a className="navbar-brand" href="/api/auth/logout">
                         Выход
                     </a>
                 </>
