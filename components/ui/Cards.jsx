@@ -27,9 +27,9 @@ function Cards({ carts }) {
                             </button>
                         </a>
 
-                        <button className="btn btn-success">
-                            Выкупить<a href=""></a>
-                        </button>
+                      <a href="/buy">  <button className="btn btn-success">
+                            Выкупить
+                        </button></a>
                         <a
                             className="btn btn-secondary"
                             href={`/orders/${cart.id}`}
