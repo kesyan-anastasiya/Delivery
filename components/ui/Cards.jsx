@@ -1,15 +1,18 @@
 const React = require('react')
 
-function Cards({ carts }) {
+function Cards({ carts, user }) { 
+    // console.log(user.status);
     return (
-        <div className="order_container">
+<div className="order_container">
             {carts.map((cart) => (
+                
                 <div key={cart.id} className="card" style={{ width: '25rem' }}>
                     <img
                         className="card-img-top"
                         src={cart.img}
                         style={{ width: '300px', height: '250px' }}
                     />
+                    
                     <div className="card-body">
                         <div className="card-title">{cart.name}</div>
                         <p>Старая цена:</p>
@@ -30,7 +33,8 @@ function Cards({ carts }) {
                         <button className="btn btn-success">
                             Выкупить<a href=""></a>
                         </button>
-                        <a
+                { (user?.status === 'Admin' &&      (  
+                <><a
                             className="btn btn-secondary"
                             href={`/orders/${cart.id}`}
                         >
@@ -41,7 +45,7 @@ function Cards({ carts }) {
                             data-id={cart.id}
                         >
                             Удалить
-                        </button>
+                        </button></>))}
                     </div>
                 </div>
             ))}
