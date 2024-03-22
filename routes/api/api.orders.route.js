@@ -12,10 +12,9 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage })
 
-
-router.post('/buy/:id', async (req,res)=>{
-   const {name, adress, comment, phone} = req.body
- try {
+router.post('/buy/:id', async (req, res) => {
+    const { name, adress, comment, phone } = req.body
+    try {
         const order = await Info.create({
             name,
             adress,
@@ -26,7 +25,6 @@ router.post('/buy/:id', async (req,res)=>{
     } catch ({ message }) {
         res.json({ message })
     }
-
 })
 
 router.post('/', upload.single('img'), async (req, res) => {
@@ -53,19 +51,22 @@ router.post('/', upload.single('img'), async (req, res) => {
     }
 })
 
-router.post('/:id', async (req, res) => {
-    try {
+router.post('/:id', upload.single('img'), async (req, res) => {
+   const { name, price, discount, description } = req.body
+   const img = `/img/${req.file.originalname}`
         const { id } = req.params
-        const { name, price, discount, description } = req.body
-
+       
+    try {
         const result = await Order.update(
-            { name, price, discount, description },
+            { name, price, discount, description, img },
             {
                 where: { id },
             }
         )
         res.redirect('/')
-    } catch (error) {}
+    } catch ({ message }) {
+        res.json({ message })
+    }
 })
 
 module.exports = router
