@@ -1,6 +1,7 @@
 const React = require('react')
 
-function Cards({ carts }) {
+function Cards({ carts, user }) {
+    // console.log(user.status);
     return (
         <div className="order_container">
             {carts.map((cart) => (
@@ -10,6 +11,7 @@ function Cards({ carts }) {
                         src={cart.img}
                         style={{ width: '300px', height: '250px' }}
                     />
+
                     <div className="card-body">
                         <div className="card-title">{cart.name}</div>
                         <p>Старая цена:</p>
@@ -27,21 +29,27 @@ function Cards({ carts }) {
                             </button>
                         </a>
 
-                      <a href="/buy">  <button className="btn btn-success">
-                            Выкупить
-                        </button></a>
-                        <a
-                            className="btn btn-secondary"
-                            href={`/orders/${cart.id}`}
-                        >
-                            Изменить
+                        <a href={`/orders/buy/${cart.id}`}>
+                            <button className="btn btn-success">
+                                Выкупить
+                            </button>
                         </a>
-                        <button
-                            className="btn btn-secondary delete"
-                            data-id={cart.id}
-                        >
-                            Удалить
-                        </button>
+                        {user?.status === 'Admin' && (
+                            <>
+                                <a
+                                    className="btn btn-secondary"
+                                    href={`/orders/${cart.id}`}
+                                >
+                                    Изменить
+                                </a>
+                                <button
+                                    className="btn btn-secondary delete"
+                                    data-id={cart.id}
+                                >
+                                    Удалить
+                                </button>
+                            </>
+                        )}
                     </div>
                 </div>
             ))}

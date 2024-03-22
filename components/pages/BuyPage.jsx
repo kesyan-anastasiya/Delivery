@@ -1,12 +1,12 @@
 const React = require('react')
 const Layout = require('../Layout')
-function BuyPage({ user }) {
+function BuyPage({id}) {
     return (
         <Layout>
             Спасибо, что выбрали наш сервис! К сожалению, сейчас мы принимаем
             оплату только на карты бобров!
             <form
-                action="/api/orders/buy"
+                action={`/api/orders/buy/${id}`}
                 method="Post"
                 className="form-container"
             >
@@ -36,6 +36,7 @@ function BuyPage({ user }) {
                     type="text"
                     name="comment"
                     className="form-control"
+                    required
                 ></textarea>
                 <button className="btn btn-success" type="submit">
                     Купить

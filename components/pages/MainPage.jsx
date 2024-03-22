@@ -26,7 +26,7 @@ function MainPage({ districts, carts, title, user }) {
                     </select>
                 </form>
             </div>
-            <Cards carts={carts} />
+            <Cards carts={carts} user = {user} />
         </Layout>
     )
 }
