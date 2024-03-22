@@ -1,7 +1,9 @@
 const container = document.querySelector('.order_container')
-
+if (container) {
 container.addEventListener('click',async (e)=>{
 if(e.target.classList.contains('delete')){
+    const agree = confirm("Удалить?")
+    if(agree === true){
     const {id}= e.target.dataset
    const res =  await fetch(`/${id}`,{
     method: 'DELETE'
@@ -11,4 +13,6 @@ if(e.target.classList.contains('delete')){
     e.target.closest('.card').remove()
    }
 }
+}
 })
+}
