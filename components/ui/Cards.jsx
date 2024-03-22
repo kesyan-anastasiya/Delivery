@@ -4,8 +4,12 @@ function Cards({ carts }) {
     return (
         <div className="order_container">
             {carts.map((cart) => (
-                <div key={cart.id} className="card" style={{ width: '18rem' }}>
-                    <img className="card-img-top" src={cart.img} />
+                <div key={cart.id} className="card" style={{ width: '25rem' }}>
+                    <img
+                        className="card-img-top"
+                        src={cart.img}
+                        style={{ width: '300px', height: '250px' }}
+                    />
                     <div className="card-body">
                         <div className="card-title">{cart.name}</div>
                         <p>Старая цена:</p>
@@ -16,23 +20,24 @@ function Cards({ carts }) {
                                 cart.price - (cart.price / 100) * cart.discount
                             )}
                         </p>
-                        <button>
-                            <a href={`/description/${cart.id}`}>
+
+                        <a href={`/description/${cart.id}`}>
+                            <button className="btn btn-secondary">
                                 Описание заказа
-                            </a>
-                        </button>
+                            </button>
+                        </a>
 
                         <button className="btn btn-success">
                             Выкупить<a href=""></a>
                         </button>
                         <a
-                            className="btn btn-primary"
+                            className="btn btn-secondary"
                             href={`/orders/${cart.id}`}
                         >
                             Изменить
                         </a>
                         <button
-                            className="btn btn-danger btn-lg delete"
+                            className="btn btn-secondary delete"
                             data-id={cart.id}
                         >
                             Удалить

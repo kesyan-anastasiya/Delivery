@@ -5,8 +5,8 @@ if(e.target.classList.contains('delete')){
     const agree = confirm("Удалить?")
     if(agree === true){
     const {id}= e.target.dataset
-   const res =  await fetch(`/${id}`,{
-    method: 'DELETE'
+   const res = await fetch(`/api/main/${id}`, {
+       method: 'DELETE',
    })
    const data = await res.json()
    if(data.message === 'ok'){
