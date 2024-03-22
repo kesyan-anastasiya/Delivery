@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params
-        const data = await Order.destroy({ where: { id } })
+        const data = await Order.destroy({ where: { id,userId: res.locals.user.id } })
         if (data) {
             res.json({ message: 'ok' })
         }
