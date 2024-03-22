@@ -17,3 +17,9 @@
 .nav-el {
     margin: 0px 30px;
 }
+.four {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
