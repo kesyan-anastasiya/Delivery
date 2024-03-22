@@ -13,6 +13,7 @@ function Cards({ carts, user }) {
                         style={{ width: '300px', height: '250px' }}
                     />
                     
+
                     <div className="card-body">
                         <div className="card-title">{cart.name}</div>
                         <p>Старая цена:</p>
@@ -29,11 +30,15 @@ function Cards({ carts, user }) {
                                 Описание заказа
                             </button>
                         </a>
-
-                        <button className="btn btn-success">
-                            Выкупить<a href=""></a>
-                        </button>
-                { (user?.status === 'Admin' &&      (  
+                        { (user?.status === 'lox' &&  (
+                           <>  
+                             <button className="btn btn-success">
+                             Выкупить<a href={`/orders/buy/${cart.id}`}></a>
+                         </button>
+                         </>
+                         ))}
+                       
+                { (user?.status === 'Admin' &&  (  
                 <><a
                             className="btn btn-secondary"
                             href={`/orders/${cart.id}`}
