@@ -1,0 +1,47 @@
+const React = require('react')
+
+function Cards({ carts }) {
+    return (
+        <div className="order_container">
+            {carts.map((cart) => (
+                <div key={cart.id} className="card" style={{ width: '18rem' }}>
+                    <img className="card-img-top" src={cart.img} />
+                    <div className="card-body">
+                        <div className="card-title">{cart.name}</div>
+                        <p>Старая цена:</p>
+                        <p className="card-text">{cart.price}</p>
+                        <p>НОВАЯ ШИКАРНАЯ ЦЕНА СО СКИДКОЙ:</p>
+                        <p className="card-text">
+                            {Math.ceil(
+                                cart.price - (cart.price / 100) * cart.discount
+                            )}
+                        </p>
+                        <button>
+                            <a href={`/description/${cart.id}`}>
+                                Описание заказа
+                            </a>
+                        </button>
+
+                        <button className="btn btn-success">
+                            Выкупить<a href=""></a>
+                        </button>
+                        <a
+                            className="btn btn-primary"
+                            href={`/orders/${cart.id}`}
+                        >
+                            Изменить
+                        </a>
+                        <button
+                            className="btn btn-danger btn-lg delete"
+                            data-id={cart.id}
+                        >
+                            Удалить
+                        </button>
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+module.exports = Cards

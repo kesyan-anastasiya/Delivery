@@ -2,14 +2,10 @@ const React = require('react')
 const Layout = require('./../Layout')
 const Form = require('../ui/Form')
 
-function CreateOrder({districts, title}) {
-    console.log(districts)
+function CreateOrder({ districts, title }) {
     return (
         <Layout>
-            {districts.map((district) => (
-                <p>{district.name}</p>
-            ))}
-            <Form />
+            <Form districts={districts} />
         </Layout>
     )
 }

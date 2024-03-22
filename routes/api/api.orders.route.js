@@ -13,8 +13,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 router.post('/', upload.single('img'), async (req, res) => {
-    const { name, price, discount, description } = req.body
-    console.log(req.file);
+    const { name, price, discount, districtId, description } = req.body
+    console.log(req.body);
    const img = `/img/${req.file.originalname}`
     if (name.trim() === '') {
         res.json({ message: 'Вставьте изображение', error })
@@ -27,7 +27,7 @@ router.post('/', upload.single('img'), async (req, res) => {
             price,
             img,
             discount,
-            districtId: '1',
+            districtId,
             description,
             userId: '1',
         })

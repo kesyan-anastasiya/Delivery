@@ -1,11 +1,15 @@
 const router = require('express').Router()
 const MainPage = require('../../components/pages/MainPage')
-const { Order } = require('../../db/models')
+const { Order, District } = require('../../db/models')
 
 router.get('/', async (req, res) => {
     try {
+        const districts = await District.findAll()
         const carts = await Order.findAll()
-        const html = res.renderComponent(MainPage, { carts, title: 'main' })
+        const html = res.renderComponent(MainPage, {
+            districts, carts,
+            title: 'main',
+        })
         res.send(html)
     } catch ({ message }) {
         res.send(message)
