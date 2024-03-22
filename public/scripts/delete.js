@@ -12,6 +12,7 @@ if(e.target.classList.contains('delete')){
    if(data.message === 'ok'){
     e.target.closest('.card').remove()
    }
+   if()
 }
 }
 })
