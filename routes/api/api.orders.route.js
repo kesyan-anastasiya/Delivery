@@ -14,8 +14,7 @@ const upload = multer({ storage })
 
 router.post('/', upload.single('img'), async (req, res) => {
     const { name, price, discount, districtId, description } = req.body
-    console.log(req.body);
-   const img = `/img/${req.file.originalname}`
+    const img = `/img/${req.file.originalname}`
     if (name.trim() === '') {
         res.json({ message: 'Вставьте изображение', error })
         return
@@ -29,7 +28,7 @@ router.post('/', upload.single('img'), async (req, res) => {
             discount,
             districtId,
             description,
-            userId: '1',
+            userId: res.locals.user.id,
         })
         res.redirect('/')
     } catch ({ message }) {
@@ -39,18 +38,17 @@ router.post('/', upload.single('img'), async (req, res) => {
 
 router.post('/:id', async (req, res) => {
     try {
-        const {id} = req.params
-    const {name, price, discount, description } = req.body
-   
-   const result = await  Order.update({name, price, discount, description},{
-    where:{id}
-   
-   }) 
-   res.redirect('/')
-    } catch (error) {
-        
-    }
+        const { id } = req.params
+        const { name, price, discount, description } = req.body
 
-    })
+        const result = await Order.update(
+            { name, price, discount, description },
+            {
+                where: { id },
+            }
+        )
+        res.redirect('/')
+    } catch (error) {}
+})
 
 module.exports = router
