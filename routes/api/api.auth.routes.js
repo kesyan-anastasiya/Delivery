@@ -39,7 +39,7 @@ router.post('/sign-up', async (req, res) => {
   try {
     const { name, email, password, status } = req.body;
 
-    if (!name.trim() && !password.trim() && !email.trim()) {
+    if (!name.trim() || !password.trim() || !email.trim()) {
       res.json({ message: 'Заполните пожалуйста все поля!' });
       return;
     }
