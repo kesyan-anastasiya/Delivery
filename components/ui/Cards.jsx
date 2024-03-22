@@ -33,7 +33,7 @@ function Cards({ carts, user }) {
                         { (user?.status === 'lox' &&  (
                            <>  
                              <button className="btn btn-success">
-                             Выкупить<a href=""></a>
+                             Выкупить<a href={`/orders/buy/${cart.id}`}></a>
                          </button>
                          </>
                          ))}
