@@ -6,6 +6,7 @@ function СourierОrders({ carts, user }) {
         <Layout user={user}>
             <div>Заказы, которые вы разместили</div>
             <Cards carts={carts} />
+               
         </Layout>
     )
 }
