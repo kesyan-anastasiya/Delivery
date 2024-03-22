@@ -6,8 +6,9 @@
 
 .order_container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 150px;
+    
 }
 .nav-conteiner {
     display: flex;
