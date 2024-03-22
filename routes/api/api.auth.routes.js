@@ -18,7 +18,7 @@ router.post('/sign-in', async (req, res) => {
     }
     const isSame = await bcrypt.compare(password, user.password);
     if (!isSame) {
-      res.json({ message: 'Пароль неверный, пожалуйста попробуй еще раз' });
+      res.json({ message: 'Пароль неверный, пожалуйста, попробуй еще раз' });
       return;
     }
     const { accessToken, refreshToken } = generateTokens({
@@ -40,7 +40,7 @@ router.post('/sign-up', async (req, res) => {
     const { name, email, password, status } = req.body;
 
     if (!name.trim() || !password.trim() || !email.trim()) {
-      res.json({ message: 'Заполните пожалуйста все поля!' });
+      res.json({ message: 'Заполните, пожалуйста, все поля!' });
       return;
     }
 
