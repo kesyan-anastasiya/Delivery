@@ -13,7 +13,7 @@ function UpdatePage({district, title, order}) {
                 <label className="input-group-text">Цена</label>
                 <input type="text"name='price'  className="form-control" value={order.price}/>
                 <label className="input-group-text">Изображение</label>
-                <input type="text" name='img' className="form-control" value={order.img}/>
+                <input type="file" name='img' className="form-control" value={order.img}/>
                 <label className="input-group-text">Район</label> 
                 <input type="text" name='distrit' className="form-control"value={order.districtId} />
                 <label className="input-group-text">Скидка</label>
