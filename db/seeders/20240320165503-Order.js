@@ -165,12 +165,12 @@ module.exports = {
         },
 
         {
-          name: "Блинчики",
+          name: "ПЕЛЬМЕШКИ",
           price: 750,
-          img: "https://www.timeout.ru/img/Ekaterina%20Solovey/21_01_19/11.jpg",
+          img: "https://static.1000.menu/img/content-v2/ce/13/21484/pelmeni-jarenye-s-syrom-na-skovorode_1632645927_9_max.jpg",
           discount: 50,
           userId: 1,
-          description: 'lololo',
+          description: 'УУУУУФФФФФФ пельмешки',
           districtId: 9,
           createdAt: new Date(),
           updatedAt: new Date(),
