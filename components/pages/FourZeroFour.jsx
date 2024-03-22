@@ -19,7 +19,10 @@ function OrderHistory({ carts }) {
                 <script defer src="/scripts/update.js" />
                 <script defer src="/scripts/auth.js" />
             </head>
-            <body>
+            {/* <body>
+            <div class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Загрузка...</span>
+</div>
                 <div className="four">
                     Вам сюда не надо
                     <a href="/">
@@ -28,7 +31,23 @@ function OrderHistory({ carts }) {
                         </button>
                     </a>
                 </div>
-            </body>
+            </body> */}
+            <body>
+    <div class="error-container">
+        <h1 class="error-title">404</h1>
+        <p class="error-message">Вам сюда не надо</p>
+        <img src="https://arigus.tv/upload/resize_cache/iblock/3b2/680_680_1/yr85idltllgw1hfsgmbqf8dbfhde515n.jpg" alt="Page Not Found" class="error-image"/>
+        <a href="/description/14" class="error-button">Вернуться к пельмешкам</a>
+    </div>
+</body>
+            {/* <body>
+    <div class="error-container">
+        <h1 class="error-title">404</h1>
+        <p class="error-message">Page Not Found</p>
+        <a href="index.html" class="error-button">Go to Homepage</a>
+    </div>
+</body> */}
+
         </html>
     )
 }
