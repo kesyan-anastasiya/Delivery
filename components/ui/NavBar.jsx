@@ -12,10 +12,10 @@ return (
             <a className="navbar-brand" href="/orders">
                 Cоздать заказ
             </a>
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="/history">
                 История заказов
             </a>
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="/my-orders">
                 Мои заказы
             </a>
             <a className="navbar-brand" href="/auth/sign-in">

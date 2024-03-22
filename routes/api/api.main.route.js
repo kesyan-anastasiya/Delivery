@@ -9,10 +9,17 @@ const { Order } = require('../../db/models')
 //     }
 // })
 
+
+
 router.post('/', async (req, res) => {
     const { districtId } = req.body
+   let carts
+    if (districtId === '30') {
+        carts = await Order.findAll()
+    } else {
+        carts = await Order.findAll({ where: { districtId } })
+    }
     try {
-        const carts = await Order.findAll({ where: { districtId } })
         const html = res.renderComponent(Cards, { carts }, { doctype: false })
         res.status(200).json({ message: '+', html })
     } catch ({ message }) {
@@ -20,15 +27,14 @@ router.post('/', async (req, res) => {
     }
 })
 
-// router.put('/', async (req, res) => {
-//     try {
-//     } catch ({ message }) {
-//         res.json({ message })
-//     }
-// })
 
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
+        const { id } = req.params
+        const data = await Order.destroy({ where: { id } })
+        if (data) {
+            res.json({ message: 'ok' })
+        }
     } catch ({ message }) {
         res.json({ message })
     }

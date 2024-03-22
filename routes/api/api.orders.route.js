@@ -31,7 +31,6 @@ router.post('/', upload.single('img'), async (req, res) => {
             description,
             userId: '1',
         })
-        // еще надо нахуярить юзер айди и разобраться с дистриктом
         res.redirect('/')
     } catch ({ message }) {
         res.json({ message })
