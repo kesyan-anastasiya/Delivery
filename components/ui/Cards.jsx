@@ -1,6 +1,7 @@
 const React = require('react')
 
-function Cards({ carts, user }) { 
+
+function Cards({ carts, user, children }) { 
     // console.log(user.status);
     return (
 <div className="order_container">
@@ -38,7 +39,7 @@ function Cards({ carts, user }) {
                          </>
                          ))}
                        
-                { (user?.status === 'Admin' &&  (  
+                { (user?.id === cart.userId &&  (  
                 <><a
                             className="btn btn-secondary"
                             href={`/orders/${cart.id}`}
@@ -50,7 +51,8 @@ function Cards({ carts, user }) {
                             data-id={cart.id}
                         >
                             Удалить
-                        </button></>))}
+                        </button>
+                        </>))}
                     </div>
                 </div>
             ))}
