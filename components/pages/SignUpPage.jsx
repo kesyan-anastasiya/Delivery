@@ -7,8 +7,8 @@ function SignUpPage() {
             <div className="container">
                 <h1
                     style={{
-                        color: 'rgba(255,0,0,1)',
-                        textTransform: 'uppercase',
+                        color: 'green',
+                        // textTransform: 'uppercase',
                     }}
                     className="sign-up__error"
                 ></h1>
