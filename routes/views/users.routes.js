@@ -1,5 +1,5 @@
 const router = require('express').Router()
-
+const configJWT = require('../../middleware/configJWT');
 
 router.get('/', (req, res) => {
     try {
@@ -32,4 +32,17 @@ router.delete('/', async (req, res) => {
         res.json({ message })
     }
 })
+
+router.get("/logout", async (req, res) => {
+    delete res.app.locals.user
+    res.redirect('/')
+})
+
+router.get('/logout', async (req, res) => {
+    res
+        .clearCookie(configJWT.access.type)
+        .clearCookie(configJWT.refresh.type);
+    res.send()
+})
+
 module.exports = router;
