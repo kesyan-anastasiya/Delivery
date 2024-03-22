@@ -1,13 +1,14 @@
 const router = require('express').Router()
-const MainPage = require('../../components/pages/MainPage')
-const СourierОrders = require('../../components/pages/СourierОrders')
-const OrdersHistory = require('../../components/pages/OrdersHistory')
+const MainPage = require('../../components/pages/MainPage.jsx')
+const СourierОrders = require('../../components/pages/СourierОrders.jsx')
+const OrdersHistory = require('../../components/pages/OrdersHistory.jsx')
 
 const { Order, District } = require('../../db/models')
 
 
 router.get('/', async (req, res) => {
     try {
+        console.log(1234);
         const districts = await District.findAll()
         const carts = await Order.findAll()
         const html = res.renderComponent(MainPage, {
