@@ -1,6 +1,7 @@
 const React = require('react')
 
-function Form(district) {
+
+function Form({districts}) {
     return (
         <div className="input-group mb-3 ">
             <form
@@ -31,12 +32,14 @@ function Form(district) {
                     required
                 />
                 <label className="input-group-text">Район</label>
-                <input
-                    type="text"
-                    name="distrit"
-                    className="form-control"
-                    required
-                />
+                <select className="form-select" name="districtId" id="">
+                    {districts.map((district) => (
+                        <option key={district.id} value={district.id}>
+                            {district.name}
+                        </option>
+                    ))}
+                </select>
+
                 <label className="input-group-text">Скидка</label>
                 <input
                     type="text"

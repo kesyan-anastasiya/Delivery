@@ -1,44 +1,34 @@
-const React = require("react");
-const Layout = require("../Layout");
+const React = require('react')
+const Layout = require('../Layout')
+const Cards = require('../ui/Cards')
 
-function MainPage({ carts, title, user}) {
+function MainPage({ districts, carts, title, user }) {
     return (
-        <Layout title={title} user = {user}>
-            <div className='order_container'>
-                {carts.map((cart) => (
-                    <div className="card" style={{ width: '18rem' }}>
-                        <img className="card-img-top" src={cart.img} />
-                        <div className="card-body">
-                            <div className="card-title">{cart.name}</div>
-                            <p>Старая цена:</p>
-                            <p className="card-text">{cart.price}</p>
-                            <p>НОВАЯ ШИКАРНАЯ ЦЕНА СО СКИДКОЙ:</p>
-                            <p className="card-text">
-                                {cart.price -
-                                    (cart.price / 100) * cart.discount}{' '}
-                            </p>
-                            <button>
-                            <a href ={`/description/${cart.id}`}>Описание заказа</a>
-                            </button>
+        <Layout title={title} user={user}>
+            <div>
+                <form className="select-district">
+                    <label for="districtId">
+                        <select
+                            className="form-select"
+                            name="districtId"
+                            id="districtId"
+                        >
+                            {districts.map((district) => (
+                                <option key={district.id} value={district.id}>
+                                    {district.name}
+                                </option>
+                            ))}
+                        </select>
+                    </label>
 
-                            <button className="btn btn-success">
-                                Выкупить<a href=''></a>
-                            </button>
-                            <a className="btn btn-primary" href={`/orders/${cart.id}`}>
-                Изменить 
-              </a>
-              <button className="btn btn-danger btn-lg delete" data-id = {cart.id}>
-                                Удалить
-                            </button>
-              
-                        </div>
-                    </div>
-                ))}
+                  
+                </form>
             </div>
+            <Cards carts={carts} />
         </Layout>
     )
 }
-module.exports = MainPage;
+module.exports = MainPage
 
 // <div class="card" style="width: 18rem;">
 //   <img src="..." class="card-img-top" alt="...">

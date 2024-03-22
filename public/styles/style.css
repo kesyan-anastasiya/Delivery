@@ -1,11 +1,19 @@
-.form-container{
+.form-container {
     width: 70%;
- margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
-.order_container{
+.order_container {
     display: flex;
     justify-content: center;
-margin-top: 150px;
+    margin-top: 150px;
+}
+.nav-conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-el {
+    margin: 0px 30px;
 }
