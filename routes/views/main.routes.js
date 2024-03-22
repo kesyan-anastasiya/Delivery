@@ -1,10 +1,9 @@
 const router = require('express').Router()
-const MainPage = require('../../components/pages/MainPage.jsx')
-const СourierОrders = require('../../components/pages/СourierОrders.jsx')
-const OrdersHistory = require('../../components/pages/OrdersHistory.jsx')
+const MainPage = require('../../components/pages/MainPage')
+const СourierОrders = require('../../components/pages/СourierОrders')
+const OrdersHistory = require('../../components/pages/OrdersHistory')
 
-const { Order, District } = require('../../db/models')
-
+const { Order, District, Info } = require('../../db/models')
 
 router.get('/', async (req, res) => {
     try {
@@ -12,7 +11,8 @@ router.get('/', async (req, res) => {
         const districts = await District.findAll()
         const carts = await Order.findAll()
         const html = res.renderComponent(MainPage, {
-            districts, carts,
+            districts,
+            carts,
             title: 'main',
         })
         res.send(html)
@@ -22,13 +22,15 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/my-orders', async (req, res) => {
+
     try {
-        const districts = await District.findAll()
-        const carts = await Order.findAll()
+        const carts = await Order.findAll({
+            where: { userId: res.locals.user.id },
+        })
+
         const html = res.renderComponent(СourierОrders, {
-            districts,
             carts,
-            title: 'main',
+            title: 'my-orders',
         })
         res.send(html)
     } catch ({ message }) {
@@ -38,20 +40,14 @@ router.get('/my-orders', async (req, res) => {
 
 router.get('/history', async (req, res) => {
     try {
-        const districts = await District.findAll()
-        const carts = await Order.findAll()
         const html = res.renderComponent(OrdersHistory, {
-            districts,
-            carts,
-            title: 'main',
+            title: 'history',
         })
         res.send(html)
     } catch ({ message }) {
         res.send(message)
     }
 })
-
-
 
 
 module.exports = router

@@ -1,18 +1,16 @@
 const React = require('react')
 
-function Cards({ carts, user }) { 
+function Cards({ carts, user }) {
     // console.log(user.status);
     return (
-<div className="order_container">
+        <div className="order_container">
             {carts.map((cart) => (
-                
                 <div key={cart.id} className="card" style={{ width: '25rem' }}>
                     <img
                         className="card-img-top"
                         src={cart.img}
                         style={{ width: '300px', height: '250px' }}
                     />
-                    
 
                     <div className="card-body">
                         <div className="card-title">{cart.name}</div>
@@ -30,27 +28,28 @@ function Cards({ carts, user }) {
                                 Описание заказа
                             </button>
                         </a>
-                        { (user?.status === 'lox' &&  (
-                           <>  
-                             <button className="btn btn-success">
-                             Выкупить<a href=""></a>
-                         </button>
-                         </>
-                         ))}
-                       
-                { (user?.status === 'Admin' &&  (  
-                <><a
-                            className="btn btn-secondary"
-                            href={`/orders/${cart.id}`}
-                        >
-                            Изменить
+
+                        <a href={`/orders/buy/${cart.id}`}>
+                            <button className="btn btn-success">
+                                Выкупить
+                            </button>
                         </a>
-                        <button
-                            className="btn btn-secondary delete"
-                            data-id={cart.id}
-                        >
-                            Удалить
-                        </button></>))}
+                        {user?.status === 'Admin' && (
+                            <>
+                                <a
+                                    className="btn btn-secondary"
+                                    href={`/orders/${cart.id}`}
+                                >
+                                    Изменить
+                                </a>
+                                <button
+                                    className="btn btn-secondary delete"
+                                    data-id={cart.id}
+                                >
+                                    Удалить
+                                </button>
+                            </>
+                        )}
                     </div>
                 </div>
             ))}
